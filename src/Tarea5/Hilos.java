@@ -51,7 +51,7 @@ public class Hilos extends JFrame implements ActionListener
 	 */
 	public Hilos() 
 	{
-		setTitle("Hilos y barras de progreso");
+		setTitle("JProgressBar con hilos.");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -88,11 +88,10 @@ public class Hilos extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
-		if(e.getSource() == btnIniciar) 
+		if(e.getSource() == btnIniciar ) 
 		{
-						
-			barraProgresoUno = new Threads(progressBarUno,"Uno");
-			barraProgresoDos = new Threads(progressBarDos, "Dos");			
+			barraProgresoUno = new Threads(progressBarUno,"Uno",240,86,157, btnIniciar);
+			barraProgresoDos = new Threads(progressBarDos, "Dos",219,2,143, btnIniciar);
 			barraProgresoUno.start();
 			barraProgresoDos.start();
 		}
